@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/dati/costants.dart';
 import 'package:flutter_application_2/dati/globals.dart';
@@ -9,7 +7,7 @@ import 'package:flutter_application_2/models/settings_view.dart';
 import 'package:flutter_application_2/widget/app_bar.dart';
 
 class Settings extends StatefulWidget {
-  Settings({Key? key}) : super(key: key);
+  const Settings({Key? key}) : super(key: key);
 
   @override
   State<Settings> createState() => _SettingsState();
@@ -34,10 +32,10 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackColor,
-      appBar: app_bar(),
+      appBar: const app_bar(),
       floatingActionButton: FloatingActionButton.extended(
-        label: Text("Avanti"),
-        icon: Icon(Icons.arrow_forward),
+        label: const Text("Avanti"),
+        icon: const Icon(Icons.arrow_forward),
         backgroundColor: kPrimaryColor,
         foregroundColor: Colors.white,
         onPressed: () {
@@ -54,7 +52,7 @@ class _SettingsState extends State<Settings> {
         padding: const EdgeInsets.all(8.0),
         child: Column(children: [
           Padding(
-              padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+              padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
               child: Padding(
                 padding: const EdgeInsets.only(bottom: kDefaultPadding),
                 child: Center(

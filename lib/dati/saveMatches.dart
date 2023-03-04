@@ -37,12 +37,18 @@ class Matches {
     String z = "";
     print('op1' + matches.toString());
     matches = matches.expand((k) => k).toList();
-    //if is not singlePlayer I have to remove one more set of brackets
+
+    ///if is not singlePlayer I have to remove one more set of brackets
     if (!singlePlayer) {
       matches = matches.expand((k) => k).toList();
     }
+
+    ///Controllo se all'interno della lista dei matches c'è un ripescato e se la modalità
+    ///ripescaggio era attiva, se sì rimuovo l'ultimo elemento
     if (ripescaggio) {
-      matches.removeLast();
+      if (matches.last == 'R') {
+        matches.removeLast();
+      }
     }
     matches = matches.map((k) => k.toString()).toList();
     z = matches.join('-');

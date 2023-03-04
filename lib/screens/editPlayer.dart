@@ -21,7 +21,7 @@ class _AddEditPlayerPageState extends State<AddEditPlayerPage> {
   final _formKey = GlobalKey<FormState>();
   late Color color;
   late String name;
-  late String image;
+  //late String image;
 
   @override
   void initState() {
@@ -29,7 +29,7 @@ class _AddEditPlayerPageState extends State<AddEditPlayerPage> {
 
     color = widget.player?.color ?? Colors.red;
     name = widget.player?.name ?? '';
-    image = widget.player?.image ?? '';
+    //image = widget.player?.image ?? '';
   }
 
   @override
@@ -53,17 +53,18 @@ class _AddEditPlayerPageState extends State<AddEditPlayerPage> {
           child: PlayerFormWidget(
             color: color,
             name: name,
-            image: image,
+            //image: image,
             onChangedColor: (color) => setState(() => this.color = color),
             onChangedName: (name) => setState(() => this.name = name),
-            onChangedImage: (image) => setState(() => this.image = image),
+            //onChangedImage: (image) => setState(() => this.image = image),
           ),
         ),
       );
 
   Widget buildButton() {
     final isFormValid =
-        name.isNotEmpty && image.isNotEmpty && (name.length <= 12);
+        //name.isNotEmpty && image.isNotEmpty && (name.length <= 12);
+        name.isNotEmpty && (name.length <= 12);
 
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
@@ -100,7 +101,7 @@ class _AddEditPlayerPageState extends State<AddEditPlayerPage> {
     final player = widget.player!.copy(
       color: color,
       name: name,
-      image: image,
+      image: 'foto.png',
     );
 
     await PlayersDatabase.instance.updatePlayer(player);
@@ -110,7 +111,7 @@ class _AddEditPlayerPageState extends State<AddEditPlayerPage> {
     final player = Player(
       color: color,
       name: name,
-      image: image,
+      image: 'foto.png',
     );
 
     await PlayersDatabase.instance.createPlayer(player);

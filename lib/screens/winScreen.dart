@@ -48,49 +48,53 @@ class _WinPageState extends State<WinPage> {
   @override
   Widget build(BuildContext context) {
     print(activeTeams.toString());
-    return Scaffold(
-        appBar: app_bar(),
-        body: Stack(children: [
-          CircularParticle(
-            key: UniqueKey(),
-            awayRadius: 80,
-            numberOfParticles: 200,
-            speedOfParticles: 2,
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            onTapAnimation: true,
-            particleColor: Colors.white.withAlpha(150),
-            awayAnimationDuration: Duration(milliseconds: 600),
-            maxParticleSize: 8,
-            isRandSize: true,
-            isRandomColor: true,
-            randColorList: [
-              Colors.red.withAlpha(210),
-              Colors.purple.withAlpha(210),
-              Colors.yellow.withAlpha(210),
-              Colors.green.withAlpha(210)
-            ],
-            awayAnimationCurve: Curves.easeInOutBack,
-            enableHover: true,
-            hoverColor: Colors.white,
-            hoverRadius: 90,
-            connectDots: false, //not recommended
-          ),
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                  vertical: kDefaultPadding * 2,
-                  horizontal: kDefaultPadding * 4),
+    return SafeArea(
+      child: Scaffold(
+          backgroundColor: kBackColor,
+          body: Stack(children: [
+            CircularParticle(
+              key: UniqueKey(),
+              awayRadius: 80,
+              numberOfParticles: 200,
+              speedOfParticles: 2,
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              onTapAnimation: true,
+              particleColor: Colors.white.withAlpha(150),
+              awayAnimationDuration: Duration(milliseconds: 600),
+              maxParticleSize: 8,
+              isRandSize: true,
+              isRandomColor: true,
+              randColorList: [
+                Colors.red.withAlpha(210),
+                Colors.purple.withAlpha(210),
+                Colors.yellow.withAlpha(210),
+                Colors.green.withAlpha(210)
+              ],
+              awayAnimationCurve: Curves.easeInOutBack,
+              enableHover: true,
+              hoverColor: Colors.white,
+              hoverRadius: 90,
+              connectDots: false, //not recommended
+            ),
+            Center(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "VINCITORE",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        color: Colors.white),
                   ),
                   SizedBox(
                     height: 80,
                   ),
                   Container(
+                    width: getWidth(context) / 1.75,
+                    height: getHeight(context) / 2.75,
                     padding: EdgeInsets.only(
                       top: kDefaultPadding * 2,
                       right: kDefaultPadding * 2,
@@ -112,22 +116,18 @@ class _WinPageState extends State<WinPage> {
                           height: getHeight(context) / 4.5,
                         ),
                         Padding(
-                          padding:
-                              const EdgeInsets.only(top: kDefaultPadding / 2),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: kDefaultPadding),
-                            child: Text(
-                              (winner1?.name ?? 'err') +
-                                  (widget.singlePlayer
-                                      ? ''
-                                      : (' e \n' + (winner2?.name ?? 'err'))),
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20),
-                              textAlign: TextAlign.center,
-                            ),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: kDefaultPadding),
+                          child: Text(
+                            (winner1?.name ?? 'err') +
+                                (widget.singlePlayer
+                                    ? ''
+                                    : (' e \n' + (winner2?.name ?? 'err'))),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                            textAlign: TextAlign.center,
                           ),
                         ),
                       ],
@@ -140,8 +140,8 @@ class _WinPageState extends State<WinPage> {
                       makeRoutePage(context: context, pageRef: MyApp());
                     },
                     child: Container(
-                      height: 40,
-                      width: 150,
+                      height: getHeight(context) / 16,
+                      width: getWidth(context) / 2,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         // ignore: prefer_const_literals_to_create_immutables
@@ -151,7 +151,7 @@ class _WinPageState extends State<WinPage> {
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 17),
+                                fontSize: getHeight(context) / 35),
                           ),
                           Icon(
                             Icons.arrow_forward_ios,
@@ -161,7 +161,7 @@ class _WinPageState extends State<WinPage> {
                       ),
                       decoration: BoxDecoration(
                         shape: BoxShape.rectangle,
-                        color: kBackColor,
+                        color: kPrimaryColor,
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
@@ -169,7 +169,7 @@ class _WinPageState extends State<WinPage> {
                 ],
               ),
             ),
-          ),
-        ]));
+          ])),
+    );
   }
 }

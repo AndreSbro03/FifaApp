@@ -60,10 +60,12 @@ class _PlayerDetailPageState extends State<PlayerDetailPage> {
                     ),
                     SizedBox(height: 8),
                     SizedBox(height: 8),
+                    /*
                     Text(
                       player.image,
                       style: TextStyle(color: Colors.white70, fontSize: 18),
                     )
+                    */
                   ],
                 ),
               ),

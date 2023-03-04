@@ -101,15 +101,15 @@ class _TeamCardState extends State<TeamCard> {
                   ),
                 ),
               ),
-              //Expanded(child: Container()),
-              SizedBox(height: getHeight(context) / 20),
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: Icon(
-                  isSelected ? Icons.done : Icons.close_outlined,
-                  size: 50,
-                  color: isSelected ? kSelectedGlow : kUnSelectedGlow,
-                ),
+              Expanded(child: SizedBox()),
+              Column(
+                children: [
+                  Icon(
+                    isSelected ? Icons.done : Icons.close_outlined,
+                    size: 50,
+                    color: isSelected ? kSelectedGlow : kUnSelectedGlow,
+                  ),
+                ],
               ),
             ],
           ),

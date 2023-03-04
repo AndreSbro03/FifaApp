@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/dati/costants.dart';
-import 'package:flutter_application_2/screens/homePage.dart';
 
 //'assets\\images\\foto.png'
 
@@ -33,14 +32,14 @@ class app_bar extends StatelessWidget implements PreferredSizeWidget {
           child: IconButton(
             icon: Icon(Icons.home, size: 27),
             onPressed: () {
-              //Navigator.popUntil(context, ModalRoute.withName('/homepage'));
+              /*
               Navigator.push(
                   context,
                   MaterialPageRoute<void>(
-                    builder: (BuildContext context) => const HomePage(),
+                    builder: (BuildContext context) => HomePage(),
                   ));
-
-              //makeRoutePage(context: context, pageRef: HomePage());
+              */
+              Navigator.of(context).popUntil((route) => route.isFirst);
             },
           ),
         )

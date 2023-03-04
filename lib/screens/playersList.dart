@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, camel_case_types, prefer_const_literals_to_create_immutables
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/dati/Players.dart';
 import 'package:flutter_application_2/dati/costants.dart';
@@ -31,20 +32,9 @@ class _players_listState extends State<players_list> {
     refreshNotes();
   }
 
-  /*
-  @override
-  void dispose() {
-    PlayersDatabase.instance.close();
-    super.dispose();
-  }*/
-
   Future refreshNotes() async {
     setState(() => isLoading = true);
-    //print('Mi accingo a cancellare la tabella');
-    //PlayersDatabase.instance.drop();
     players = await PlayersDatabase.instance.readAllPlayers();
-    print('done');
-
     setState(() => isLoading = false);
   }
 
@@ -59,9 +49,10 @@ class _players_listState extends State<players_list> {
           backgroundColor: kPrimaryColor,
           foregroundColor: Colors.white,
           onPressed: () async {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
+            if (activePlayer.length >= 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
                   builder: (context) => sortTeams
                       ? TeamsList(
                           singlePlayer: widget.singlePlayer,
@@ -69,8 +60,10 @@ class _players_listState extends State<players_list> {
                       : tournament_render(
                           singlePlayer: widget.singlePlayer,
                           matches: [],
-                        )),
-            );
+                        ),
+                ),
+              );
+            }
           },
         ),
         body: Column(
@@ -119,7 +112,7 @@ class _players_listState extends State<players_list> {
             //buildPlayers(),sfondo(),
             SizedBox(
               height: 20,
-            )
+            ),
           ],
         ));
   }

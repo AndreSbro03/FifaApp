@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 
 class PlayerFormWidget extends StatelessWidget {
   final Color? color;
-  final String? image;
+  //final String? image;
   final String? name;
 
   final ValueChanged<Color> onChangedColor;
-  final ValueChanged<String> onChangedImage;
+  //final ValueChanged<String> onChangedImage;
   final ValueChanged<String> onChangedName;
 
   PlayerFormWidget({
     Key? key,
     this.color = Colors.red,
-    this.image = '',
+    //this.image = '',
     this.name = '',
     required this.onChangedColor,
     required this.onChangedName,
-    required this.onChangedImage,
+    //required this.onChangedImage,
   }) : super(key: key);
 
   @override
@@ -29,7 +29,7 @@ class PlayerFormWidget extends StatelessWidget {
             children: [
               buildTitle(),
               const SizedBox(height: 8),
-              buildDescription(),
+              //buildDescription(),
               const SizedBox(height: 16),
               buildColor(context)
             ],
@@ -66,9 +66,9 @@ class PlayerFormWidget extends StatelessWidget {
         onChanged: onChangedName,
       );
 
-  Widget buildDescription() => TextFormField(
+  /*Widget buildDescription() => TextFormField(
         maxLines: 5,
-        initialValue: image,
+        //initialValue: image,
         style: const TextStyle(color: Colors.white60, fontSize: 18),
         decoration: const InputDecoration(
           border: InputBorder.none,
@@ -77,8 +77,9 @@ class PlayerFormWidget extends StatelessWidget {
         ),
         validator: (image) =>
             image != null && image.isEmpty ? 'The url cannot be empty' : null,
-        onChanged: onChangedImage,
+        //onChanged: onChangedImage,
       );
+  */
 
   Widget buildColor(BuildContext context) => Center(
         child: Column(

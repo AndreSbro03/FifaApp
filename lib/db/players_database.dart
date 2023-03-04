@@ -18,17 +18,13 @@ class PlayersDatabase {
   }
 
   Future<Database> _initDB(String filePath) async {
-    print('sono in initDB');
     final dbPath = await getDatabasesPath();
-    print('fatto 1');
     final path = join(dbPath, filePath);
-    print('fatto2');
 
     return await openDatabase(path, version: 1, onCreate: _createDB);
   }
 
   Future _createDB(Database db, int version) async {
-    print('sono in create database');
     final idType = 'INTEGER PRIMARY KEY AUTOINCREMENT';
     final textType = 'TEXT NOT NULL';
     final boolType = 'BOOLEAN NOT NULL';
