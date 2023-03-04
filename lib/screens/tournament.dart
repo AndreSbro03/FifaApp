@@ -40,7 +40,7 @@ class _tournament_renderState extends State<tournament_render> {
     bool reLoad = widget.reLoad ?? false;
     int seed = 0;
 
-    //Creazione o aggiornamento toreno
+    //Creazione o aggiornamento torneo
     if (!reLoad) {
       List winners = [];
       if (matches.isEmpty) {
@@ -85,6 +85,7 @@ class _tournament_renderState extends State<tournament_render> {
             //Controllo se un ripescato ha passato il turno per definirne l'identità
             if (checkForRipescati(matches, singlePlayer)) {
               losers = getEliminatedPlayer(matches);
+
               makeRoutePage(
                   context: context,
                   pageRef: subRipescato(

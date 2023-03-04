@@ -78,10 +78,7 @@ class HomePage extends StatelessWidget {
                       color: Colors.black,
                     ),
                     onPressed: () async {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Settings()),
-                      );
+                      makeRoutePage(context: context, pageRef: Settings());
                     },
                     color: Colors.black,
                     iconSize: 150,

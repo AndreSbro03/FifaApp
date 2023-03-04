@@ -3,12 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/dati/Players.dart';
 import 'package:flutter_application_2/dati/costants.dart';
-import 'package:flutter_application_2/dati/functions.dart';
 import 'package:flutter_application_2/dati/globals.dart';
 import 'package:flutter_application_2/dati/saveMatches.dart';
 import 'package:flutter_application_2/db/players_database.dart';
 import 'package:flutter_application_2/main.dart';
-import 'package:flutter_application_2/widget/app_bar.dart';
 import 'package:particles_flutter/particles_flutter.dart';
 
 class WinPage extends StatefulWidget {
@@ -137,7 +135,10 @@ class _WinPageState extends State<WinPage> {
                   TextButton(
                     onPressed: () {
                       Matches.instance.removeData();
-                      makeRoutePage(context: context, pageRef: MyApp());
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => MyApp()),
+                          (Route<dynamic> route) => false);
                     },
                     child: Container(
                       height: getHeight(context) / 16,

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/dati/Teams.dart';
 import 'package:flutter_application_2/dati/costants.dart';
+import 'package:flutter_application_2/dati/functions.dart';
 import 'package:flutter_application_2/dati/globals.dart';
 import 'package:flutter_application_2/screens/tournament.dart';
 import 'package:flutter_application_2/widget/app_bar.dart';
@@ -57,14 +58,12 @@ class _TeamsListState extends State<TeamsList> {
           foregroundColor: Colors.white,
           onPressed: () async {
             if (minTeams == 0) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => tournament_render(
-                          singlePlayer: widget.singlePlayer,
-                          matches: [],
-                        )),
-              );
+              makeRoutePage(
+                  context: context,
+                  pageRef: tournament_render(
+                    singlePlayer: widget.singlePlayer,
+                    matches: [],
+                  ));
             }
           },
         ),

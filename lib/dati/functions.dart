@@ -107,10 +107,7 @@ dynamic tournamentWinner(List matches) {
 
 //Chiamare una pagina senza avere una transizione lineare
 void makeRoutePage({required BuildContext context, required Widget pageRef}) {
-  Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(builder: (context) => pageRef),
-      (Route<dynamic> route) => false);
+  Navigator.push(context, MaterialPageRoute(builder: (context) => pageRef));
 }
 
 bool checkForRipescati(matches, singlePlayer) {

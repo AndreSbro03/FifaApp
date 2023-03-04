@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/dati/costants.dart';
+import 'package:flutter_application_2/dati/functions.dart';
 import 'package:flutter_application_2/dati/globals.dart';
 import 'package:flutter_application_2/models/text_box.dart';
 import 'package:flutter_application_2/screens/playersList.dart';
@@ -39,13 +40,9 @@ class _SettingsState extends State<Settings> {
         backgroundColor: kPrimaryColor,
         foregroundColor: Colors.white,
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => players_list(
+          makeRoutePage(context: context, pageRef: players_list(
                       singlePlayer: singlePlayer,
-                    )),
-          );
+          ));
         },
       ),
       body: Padding(

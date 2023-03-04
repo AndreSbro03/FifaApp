@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/dati/Players.dart';
 import 'package:flutter_application_2/dati/costants.dart';
+import 'package:flutter_application_2/dati/functions.dart';
 import 'package:flutter_application_2/dati/globals.dart';
 import 'package:flutter_application_2/db/players_database.dart';
 import 'package:flutter_application_2/models/text_styles.dart';
@@ -50,18 +51,16 @@ class _players_listState extends State<players_list> {
           foregroundColor: Colors.white,
           onPressed: () async {
             if (activePlayer.length >= 2) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => sortTeams
-                      ? TeamsList(
-                          singlePlayer: widget.singlePlayer,
-                        )
-                      : tournament_render(
-                          singlePlayer: widget.singlePlayer,
-                          matches: [],
-                        ),
-                ),
+              makeRoutePage(
+                context: context,
+                pageRef: sortTeams
+                    ? TeamsList(
+                        singlePlayer: widget.singlePlayer,
+                      )
+                    : tournament_render(
+                        singlePlayer: widget.singlePlayer,
+                        matches: [],
+                      ),
               );
             }
           },
