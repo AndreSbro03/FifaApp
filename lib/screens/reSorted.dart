@@ -14,15 +14,19 @@ class subRipescato extends StatelessWidget {
   bool singlePlayer;
   List<dynamic> matches;
   List eliminated;
-  subRipescato(
-      {Key? key,
-      required this.singlePlayer,
-      required this.matches,
-      required this.eliminated})
-      : super(key: key);
+  List<int> results;
+  subRipescato({
+    Key? key,
+    required this.singlePlayer,
+    required this.matches,
+    required this.eliminated,
+    required this.results,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    print("Il programma è entrato in modalità ripescato");
+
     return Scaffold(
       backgroundColor: kBackColor,
       appBar: app_bar(),
@@ -56,12 +60,15 @@ class subRipescato extends StatelessWidget {
                           matches[i][1] = (await PlayersDatabase.instance
                                   .readPlayer(eliminated[index]))
                               .id;
-                          activeTeams.add(1);
+                          if (sortTeams) {
+                            activeTeams.add(1);
+                          }
                           makeRoutePage(
                               context: context,
                               pageRef: tournament_render(
                                 singlePlayer: singlePlayer,
                                 matches: matches,
+                                results_: results,
                               ));
                         });
                   } else {
@@ -77,6 +84,7 @@ class subRipescato extends StatelessWidget {
                               pageRef: tournament_render(
                                 singlePlayer: singlePlayer,
                                 matches: matches,
+                                results_: results,
                               ));
                         });
                   }

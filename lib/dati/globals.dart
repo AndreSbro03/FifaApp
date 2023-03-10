@@ -1,7 +1,6 @@
 library my_prj.globals;
 
-List<dynamic> activePlayer = [];
-List<int> results = [];
+List<int> activePlayer = [];
 List<int> activeTeams = [];
 
 //GameModes

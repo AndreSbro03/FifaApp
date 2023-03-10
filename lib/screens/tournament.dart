@@ -16,10 +16,12 @@ class tournament_render extends StatefulWidget {
   bool singlePlayer;
   bool? reLoad;
   List<dynamic> matches;
+  List<int>? results_;
   tournament_render(
       {Key? key,
       required this.singlePlayer,
       required this.matches,
+      required this.results_,
       this.reLoad})
       : super(key: key);
 
@@ -39,6 +41,7 @@ class _tournament_renderState extends State<tournament_render> {
     bool singlePlayer = widget.singlePlayer;
     bool reLoad = widget.reLoad ?? false;
     int seed = 0;
+    List<int>? results = widget.results_;
 
     //Creazione o aggiornamento torneo
     if (!reLoad) {
@@ -49,21 +52,23 @@ class _tournament_renderState extends State<tournament_render> {
         activeTeams.shuffle(Random(seed));
         matches = createMatches(singlePlayer);
       } else {
-        winners = getWinners(matches);
+        winners = getWinners(matches, results!);
         if (reSort) {
           seed = Random().nextInt(100000);
           winners.shuffle(Random(seed));
           activeTeams.shuffle(Random(seed));
         }
-        matches = updateMatches(singlePlayer, winners);
+        matches = updateMatches(singlePlayer, winners, results);
+        print("Results are: " + results.toString());
       }
     }
 
     Matches.instance.saveData(singlePlayer, matches);
-    print("activeTeams" + activeTeams.toString());
+    print("Courrent active teams: " + activeTeams.toString());
 
     var draw = 0;
     results = List.filled(matches.length, draw);
+    print("Results are: " + results.toString());
 
     List losers = [];
 
@@ -76,15 +81,15 @@ class _tournament_renderState extends State<tournament_render> {
         backgroundColor: kPrimaryColor,
         foregroundColor: Colors.white,
         onPressed: () {
-          if (matches.length == 1 && results.length == 1) {
-            dynamic win = tournamentWinner(matches);
+          if (matches.length == 1 && results!.length == 1) {
+            dynamic win = tournamentWinner(matches, results);
             makeRoutePage(
                 context: context,
                 pageRef: WinPage(win: win, singlePlayer: singlePlayer));
           } else {
             //Controllo se un ripescato ha passato il turno per definirne l'identità
-            if (checkForRipescati(matches, singlePlayer)) {
-              losers = getEliminatedPlayer(matches);
+            if (checkForRipescati(matches, singlePlayer, results)) {
+              losers = getEliminatedPlayer(matches, results);
 
               makeRoutePage(
                   context: context,
@@ -92,6 +97,7 @@ class _tournament_renderState extends State<tournament_render> {
                     matches: matches,
                     eliminated: losers,
                     singlePlayer: singlePlayer,
+                    results: results!,
                   ));
             } else {
               makeRoutePage(
@@ -99,6 +105,7 @@ class _tournament_renderState extends State<tournament_render> {
                   pageRef: tournament_render(
                     singlePlayer: singlePlayer,
                     matches: matches,
+                    results_: results,
                   ));
             }
           }
@@ -112,13 +119,13 @@ class _tournament_renderState extends State<tournament_render> {
             return matchesRow(
               index: index,
               matches: matches,
-              results: results,
+              results: results!,
             );
           } else {
             return squadMatchesRow(
               index: index,
               matches: matches,
-              results: results,
+              results: results!,
             );
           }
         },

@@ -8,7 +8,6 @@ void main() {
   runApp(const MyApp());
   globals.activePlayer;
   globals.activeTeams;
-  globals.results;
 }
 
 class MyApp extends StatelessWidget {

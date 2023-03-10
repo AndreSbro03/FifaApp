@@ -119,6 +119,7 @@ class HomePage extends StatelessWidget {
                         pageRef: tournament_render(
                           singlePlayer: singlePlayer ?? true,
                           matches: matches,
+                          results_: null,
                           reLoad: true,
                         ));
                   }

@@ -26,7 +26,7 @@ class _isPlayerSelectedState extends State<isPlayerSelected> {
   void toggleCard() {
     //activePlayer deve essere definita il player_list
     if (isSelected == false) {
-      activePlayer.add(widget.id);
+      activePlayer.add(widget.id!);
     } else {
       activePlayer.remove(widget.id);
     }
@@ -44,7 +44,8 @@ class _isPlayerSelectedState extends State<isPlayerSelected> {
       onPressed: toggleCard,
       child: Text(
         isSelected ? "Gioca" : "XX",
-        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        style:
+            const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
       ),
       color: isSelected ? kPrimaryColor : Colors.red.shade300,
     );

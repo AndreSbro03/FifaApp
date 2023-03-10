@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/dati/globals.dart';
 
 //accoppiamento non smistato per le partite
-List updateMatches(singlePlayer, winners) {
+List updateMatches(singlePlayer, winners, results) {
   List matchesResult = [];
   List<dynamic> _wins = [];
   for (var i = 0; i < results.length; i++) {
@@ -26,7 +26,7 @@ List updateMatches(singlePlayer, winners) {
       matchesResult.add(_wins);
     }
   }
-  print(matchesResult);
+  print("Matches results: " + matchesResult.toString());
   return matchesResult;
 }
 
@@ -85,11 +85,11 @@ List createMatches(singlePlayer, [List? matches]) {
     matchesResult = _matches;
   }
 
-  print(matchesResult);
+  print("Matches results: " + matchesResult.toString());
   return matchesResult;
 }
 
-dynamic tournamentWinner(List matches) {
+dynamic tournamentWinner(List matches, results) {
   List<int> lastTeam = [];
   if (matches.length == 1) {
     var _winner = matches[0][results[0] - 1];
@@ -105,12 +105,7 @@ dynamic tournamentWinner(List matches) {
   }
 }
 
-//Chiamare una pagina senza avere una transizione lineare
-void makeRoutePage({required BuildContext context, required Widget pageRef}) {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => pageRef));
-}
-
-bool checkForRipescati(matches, singlePlayer) {
+bool checkForRipescati(matches, singlePlayer, results) {
   for (var i = 0; i < results.length; i++) {
     var _winner = matches[i][results[i] - 1];
     if (singlePlayer && _winner == "R") {
@@ -122,7 +117,7 @@ bool checkForRipescati(matches, singlePlayer) {
   return false;
 }
 
-List getEliminatedPlayer(matches) {
+List getEliminatedPlayer(matches, results) {
   List losers = matches.map((e) => e.toList()).toList();
   losers.removeLast();
   for (var i = 0; i < losers.length; i++) {
@@ -134,7 +129,7 @@ List getEliminatedPlayer(matches) {
   return flattened;
 }
 
-List getWinners(matches) {
+List getWinners(matches, List<int> results) {
   List k = matches.map((e) => e.toList()).toList();
   List _winners = [];
   List<int> _newActiveTeams = [];
@@ -157,4 +152,9 @@ List getWinners(matches) {
 
   print("Winners: " + _winners.toString());
   return _winners;
+}
+
+//Chiamare una pagina senza avere una transizione lineare
+void makeRoutePage({required BuildContext context, required Widget pageRef}) {
+  Navigator.push(context, MaterialPageRoute(builder: (context) => pageRef));
 }

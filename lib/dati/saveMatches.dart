@@ -35,7 +35,7 @@ class Matches {
 
   List<String> convertToStringList(List matches, bool singlePlayer) {
     String z = "";
-    print('op1' + matches.toString());
+    print('Saving thoose matches: ' + matches.toString());
     matches = matches.expand((k) => k).toList();
 
     ///if is not singlePlayer I have to remove one more set of brackets
@@ -52,13 +52,12 @@ class Matches {
     }
     matches = matches.map((k) => k.toString()).toList();
     z = matches.join('-');
-    print(z);
     List<String> _matches = [];
     _matches.clear();
     _matches.add(singlePlayer ? "Y" : "N");
     _matches.add(ripescaggio ? "Y" : "N");
     _matches.add(z);
-    print(_matches);
+    print("Saving... " + _matches.toString());
     return _matches;
   }
 
@@ -70,9 +69,7 @@ class Matches {
     List matches;
     matches = _in[2].split("-");
     matches = matches.map((e) => int.parse(e)).toList();
-    //print(matches);
     matches = createMatches(singlePlayer, matches);
-    //print(matches);
     return [singlePlayer, matches];
   }
 }

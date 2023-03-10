@@ -63,6 +63,7 @@ class _TeamsListState extends State<TeamsList> {
                   pageRef: tournament_render(
                     singlePlayer: widget.singlePlayer,
                     matches: [],
+                    results_: null,
                   ));
             }
           },

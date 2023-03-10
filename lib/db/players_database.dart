@@ -10,7 +10,6 @@ class PlayersDatabase {
   PlayersDatabase._init();
 
   Future<Database> get database async {
-    print('sono in getdatabase');
     if (_database != null) return _database!;
 
     _database = await _initDB('notes.db');

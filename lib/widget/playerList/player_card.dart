@@ -49,9 +49,10 @@ class PlayerCard extends StatelessWidget {
                             (20 * log((player.name).length + 1))),
                   ),
                 ),
-                isPlayerSelected(id: player.id
-                    //chiamarlo ogni volta con l'id del giocatore corrente
-                    ),
+                isPlayerSelected(
+                  //chiamarlo ogni volta con l'id del giocatore corrente
+                  id: player.id,                  
+                ),
               ],
             ),
           ),

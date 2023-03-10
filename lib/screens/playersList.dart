@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, camel_case_types, prefer_const_literals_to_create_immutables
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/dati/Players.dart';
 import 'package:flutter_application_2/dati/costants.dart';
@@ -60,6 +59,7 @@ class _players_listState extends State<players_list> {
                     : tournament_render(
                         singlePlayer: widget.singlePlayer,
                         matches: [],
+                        results_: null,
                       ),
               );
             }
@@ -139,7 +139,7 @@ class _players_listState extends State<players_list> {
 
                     refreshNotes();
                   },
-                  child: PlayerCard(player: player, press: () {}),
+                  child: PlayerCard(player: player, press: () {},),
                   //child: PlayerCardWidget(player: player, index: index),
                 );
               }),

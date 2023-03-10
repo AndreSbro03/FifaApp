@@ -2,15 +2,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/dati/costants.dart';
-import 'package:flutter_application_2/dati/globals.dart';
 
 class resultButton extends StatefulWidget {
   final int index;
   final dynamic icon;
+  final List<int> results;
   const resultButton({
     Key? key,
     required this.index,
     this.icon,
+    required this.results,
   }) : super(key: key);
 
   @override
@@ -23,7 +24,7 @@ class _resultButtonState extends State<resultButton> {
 
   void changeResult(index, icon) {
     //prendo il risultato della partita per cambiarlo
-    int result = results[index];
+    int result = widget.results[index];
 
     if (result == 0) {
       result = 1;
@@ -34,7 +35,7 @@ class _resultButtonState extends State<resultButton> {
     }
 
     //reinserisco il risultato della partita
-    results[index] = result;
+    widget.results[index] = result;
 
     //cambio l'icona del bottone in base al risultato
     switch (result) {

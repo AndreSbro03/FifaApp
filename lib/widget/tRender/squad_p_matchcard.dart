@@ -10,7 +10,7 @@ import 'ripescato_card.dart';
 
 class squadMatchesRow extends StatefulWidget {
   final List matches;
-  final List results;
+  final List<int> results;
   final int index;
   squadMatchesRow({
     Key? key,
@@ -129,6 +129,7 @@ class _squadMatchesRowState extends State<squadMatchesRow> {
             resultButton(
               index: widget.index,
               icon: icon,
+              results: widget.results,
             ),
             secondCard(ripescato, gP3, gP4, team2Id),
           ],
