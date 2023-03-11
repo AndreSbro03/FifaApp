@@ -114,9 +114,12 @@ bool checkForRipescati(matches, singlePlayer, results) {
       return true;
     }
   }
+
   return false;
 }
 
+///Creo una copia della variabile dei matches, rimuovo l'ultimo, poichè è quello con la R
+///quindi so già che non mi interessa, rimuovo i vincitori e quindi rimango con gli sconfitti
 List getEliminatedPlayer(matches, results) {
   List losers = matches.map((e) => e.toList()).toList();
   losers.removeLast();
@@ -142,12 +145,6 @@ List getWinners(matches, List<int> results) {
 
   if (_newActiveTeams.isNotEmpty) {
     activeTeams = _newActiveTeams;
-
-    ///TODO
-    ///inserire una variabile passata come parametro in cui poter salvare una
-    ///mappa che collega i giocatori eliminati alla squadra che avevano così da
-    ///poter evitare di dover ricorrere a funzioni aggiuntive
-
   }
 
   print("Winners: " + _winners.toString());

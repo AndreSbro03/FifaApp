@@ -25,8 +25,12 @@ class subRipescato extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("Il programma è entrato in modalità ripescato");
-
+    ///La funzione per come l'avevo inizialmente pensata andava a modificare la variabile
+    ///dei matches che le veniva passata in input, quindi se poi si voleva tornare indietro
+    ///più avanti nel torneo, l'applicazione non trovava un ripescato da sustituire perchè
+    ///nella variabile era già stato sostituito. Facendo una copia della variabile e poi
+    ///andando a lavorare su questa si evita questo problema, lasciando intatta la variabile iniziale.
+    List<dynamic> copyMatches = matches.map((e) => e.toList()).toList();
     return Scaffold(
       backgroundColor: kBackColor,
       appBar: app_bar(),
@@ -57,9 +61,9 @@ class subRipescato extends StatelessWidget {
                         index: index,
                         press: () async {
                           int i = matches.length - 1;
-                          matches[i][1] = (await PlayersDatabase.instance
-                                  .readPlayer(eliminated[index]))
-                              .id;
+                          print("Matches prima:" + matches.toString());
+                          copyMatches[i][1] = eliminated[index];
+                          print("Matches dopo:" + matches.toString());
                           if (sortTeams) {
                             activeTeams.add(1);
                           }
@@ -67,7 +71,7 @@ class subRipescato extends StatelessWidget {
                               context: context,
                               pageRef: tournament_render(
                                 singlePlayer: singlePlayer,
-                                matches: matches,
+                                matches: copyMatches,
                                 results_: results,
                               ));
                         });
@@ -77,13 +81,13 @@ class subRipescato extends StatelessWidget {
                         index: index,
                         press: () {
                           int i = matches.length - 1;
-                          matches[i][1] = eliminated[index];
+                          copyMatches[i][1] = eliminated[index];
                           activeTeams.add(1);
                           makeRoutePage(
                               context: context,
                               pageRef: tournament_render(
                                 singlePlayer: singlePlayer,
-                                matches: matches,
+                                matches: copyMatches,
                                 results_: results,
                               ));
                         });

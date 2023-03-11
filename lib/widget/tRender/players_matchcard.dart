@@ -14,7 +14,7 @@ class matchesRow extends StatefulWidget {
   final List matches;
   final List<int> results;
   final int index;
-  matchesRow({
+  const matchesRow({
     Key? key,
     required this.index,
     required this.matches,
@@ -55,7 +55,7 @@ class _matchesRowState extends State<matchesRow> {
     }
   }
 
-  ///Questa funzione recupera a partire da l'idex del match le squadre
+  ///Questa funzione recupera, a partire da l'index del match, le squadre
   ///ad esso associate, le variabili team1Id e team2Id sono inizializzate
   ///a 1 perchè è necessario dargli un valore porvvisorio poichè questa funzione
   ///necessita di ripescato per funzionare, che però è un una funzione future.
