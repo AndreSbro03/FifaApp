@@ -1,6 +1,8 @@
-# flutter_application_2
+# Fifa App
 
-A new Flutter project.
+Un'applicazione per gistire i tornei, pensata in particolare per i tornei di fifa, ma funzionante anche per tornei
+per esempio di ping-pong, calcetto barilla, nba... Non è nulla di professionale, ma rende organizzare i tornei
+in singolo o in doppio molto più semplice.
 
 ## Getting Started
 
