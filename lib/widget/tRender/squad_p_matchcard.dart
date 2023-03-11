@@ -32,8 +32,8 @@ class _squadMatchesRowState extends State<squadMatchesRow> {
   bool ripescato = false;
   PlayersDatabase pb = PlayersDatabase.instance;
 
-  int team1Id = 1;
-  int team2Id = 1;
+  int? team1Id = 1;
+  int? team2Id = 1;
 
   @override
   void initState() {
@@ -61,16 +61,16 @@ class _squadMatchesRowState extends State<squadMatchesRow> {
     }
   }
 
-  ///Questa funzione recupera a partire da l'idex del match le squadre
-  ///ad esso associate, le variabili team1Id e team2Id sono inizializzate
-  ///a 1 perchè è necessario dargli un valore porvvisorio poichè questa funzione
-  ///necessita di ripescato per funzionare, che però è un una funzione future.
+  ///Questa funzione è necessaria perchè per avere l'id della Squadra giusta, in
+  ///modo da poterci assegnare l'immagine corretta, dobbiamo aspettarel'id di uno dei
+  ///giocatori identificativi, quindi intanto le due variabili team1Id e team2Id vengono
+  ///inizializzate a caso a 1, poi appena avremmo i dati dei giocatori verranno re
+  ///impostate
   void getTeams() {
     if (sortTeams) {
-      print("Ripescato " + ripescato.toString());
-      team1Id = activeTeams[(widget.index * 2)];
-      if (ripescato == false) {
-        team2Id = activeTeams[(widget.index * 2) + 1];
+      team1Id = assTeams[gP1?.id];
+      if (!ripescato) {
+        team2Id = assTeams[gP3?.id];
       }
     }
   }

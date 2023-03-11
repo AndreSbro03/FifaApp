@@ -24,6 +24,7 @@ class _WinPageState extends State<WinPage> {
   Player? winner2;
 
   int dBox = 0;
+  int? winTeamId = 1;
 
   PlayersDatabase pb = PlayersDatabase.instance;
 
@@ -32,6 +33,7 @@ class _WinPageState extends State<WinPage> {
     super.initState();
     getWinner().then((value) {
       //update Ui after getting data
+      getTeams();
       setState(() {});
     });
   }
@@ -43,9 +45,19 @@ class _WinPageState extends State<WinPage> {
     winner2 = widget.singlePlayer ? null : await pb.readPlayer(widget.win[1]);
   }
 
+  ///Questa funzione è necessaria perchè per avere l'id della Squadra giusta, in
+  ///modo da poterci assegnare l'immagine corretta, dobbiamo aspettarel'id di uno dei
+  ///giocatori identificativi, quindi intanto le due variabili team1Id e team2Id vengono
+  ///inizializzate a caso a 1, poi appena avremmo i dati dei giocatori verranno re
+  ///impostate
+  void getTeams() {
+    if (sortTeams) {
+      winTeamId = assTeams[winner1?.id];
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    print(activeTeams.toString());
     return SafeArea(
       child: Scaffold(
           backgroundColor: kBackColor,
@@ -107,7 +119,7 @@ class _WinPageState extends State<WinPage> {
                         Image.asset(
                           sortTeams
                               ? 'assets/images/team_' +
-                                  activeTeams[0].toString() +
+                                  winTeamId.toString() +
                                   '.png'
                               : 'assets/images/foto.png',
                           width: getHeight(context) / 4.5,

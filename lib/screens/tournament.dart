@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, camel_case_types
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/dati/Teams.dart';
 import 'package:flutter_application_2/dati/functions.dart';
 import 'package:flutter_application_2/dati/costants.dart';
 import 'package:flutter_application_2/dati/globals.dart';
@@ -40,23 +41,22 @@ class _tournament_renderState extends State<tournament_render> {
     List matches = widget.matches;
     bool singlePlayer = widget.singlePlayer;
     bool reLoad = widget.reLoad ?? false;
-    int seed = 0;
     List<int>? results = widget.results_;
 
     //Creazione o aggiornamento torneo
     if (!reLoad) {
       List winners = [];
       if (matches.isEmpty) {
-        seed = Random().nextInt(100000);
-        activePlayer.shuffle(Random(seed));
-        activeTeams.shuffle(Random(seed));
+        activePlayer.shuffle(Random());
+        activeTeams.shuffle(Random());
         matches = createMatches(singlePlayer);
+        if (sortTeams) {
+          associateTeam(matches, singlePlayer);
+        }
       } else {
         winners = getWinners(matches, results!);
         if (reSort) {
-          seed = Random().nextInt(100000);
-          winners.shuffle(Random(seed));
-          activeTeams.shuffle(Random(seed));
+          winners.shuffle(Random());
         }
         matches = updateMatches(singlePlayer, winners, results);
         print("Results are: " + results.toString());

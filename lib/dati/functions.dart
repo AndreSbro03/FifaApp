@@ -90,13 +90,8 @@ List createMatches(singlePlayer, [List? matches]) {
 }
 
 dynamic tournamentWinner(List matches, results) {
-  List<int> lastTeam = [];
   if (matches.length == 1) {
     var _winner = matches[0][results[0] - 1];
-    if (sortTeams) {
-      lastTeam.add(activeTeams[results[0] - 1]);
-      activeTeams = lastTeam;
-    }
     activePlayer = [];
     results = [];
     return _winner;
@@ -135,16 +130,8 @@ List getEliminatedPlayer(matches, results) {
 List getWinners(matches, List<int> results) {
   List k = matches.map((e) => e.toList()).toList();
   List _winners = [];
-  List<int> _newActiveTeams = [];
   for (var i = 0; i < k.length; i++) {
     _winners.add(k[i][results[i] - 1]);
-    if (sortTeams) {
-      _newActiveTeams.add(activeTeams[(i * 2) + (results[i] - 1)]);
-    }
-  }
-
-  if (_newActiveTeams.isNotEmpty) {
-    activeTeams = _newActiveTeams;
   }
 
   print("Winners: " + _winners.toString());
@@ -154,4 +141,27 @@ List getWinners(matches, List<int> results) {
 //Chiamare una pagina senza avere una transizione lineare
 void makeRoutePage({required BuildContext context, required Widget pageRef}) {
   Navigator.push(context, MaterialPageRoute(builder: (context) => pageRef));
+}
+
+///Assegnazione dei team, prendendo come rifermento l'Id del primo (o unico) giocatore
+///di ogni squadra gli si associa l'id di un team, di modo che a prescindere da tutte le
+///operazioni che si possano fare alle variabili dei matches le squadre potranno sempre
+///essere associate allo stesso team
+void associateTeam(List<dynamic> matches, bool singlePlayer) {
+  if (singlePlayer) {
+    for (int i = 0; i < matches.length; i++) {
+      assTeams[matches[i][0]] = activeTeams[(i * 2) + 0];
+      if (matches[i][1] != 'R') {
+        assTeams[matches[i][1]] = activeTeams[(i * 2) + 1];
+      }
+    }
+  } else {
+    for (int i = 0; i < matches.length; i++) {
+      assTeams[matches[i][0][0]] = activeTeams[(i * 2) + 0];
+      if (matches[i][1][0] != 'R') {
+        assTeams[matches[i][1][0]] = activeTeams[(i * 2) + 1];
+      }
+    }
+  }
+  print("The teams MAP is: " + assTeams.toString());
 }

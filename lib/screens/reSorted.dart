@@ -61,12 +61,7 @@ class subRipescato extends StatelessWidget {
                         index: index,
                         press: () async {
                           int i = matches.length - 1;
-                          print("Matches prima:" + matches.toString());
                           copyMatches[i][1] = eliminated[index];
-                          print("Matches dopo:" + matches.toString());
-                          if (sortTeams) {
-                            activeTeams.add(1);
-                          }
                           makeRoutePage(
                               context: context,
                               pageRef: tournament_render(
@@ -82,7 +77,6 @@ class subRipescato extends StatelessWidget {
                         press: () {
                           int i = matches.length - 1;
                           copyMatches[i][1] = eliminated[index];
-                          activeTeams.add(1);
                           makeRoutePage(
                               context: context,
                               pageRef: tournament_render(

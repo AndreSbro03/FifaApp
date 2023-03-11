@@ -48,6 +48,7 @@ class _TeamsListState extends State<TeamsList> {
 
   @override
   Widget build(BuildContext context) {
+    print("Current active teams: " + activeTeams.toString());
     return Scaffold(
         backgroundColor: kBackColor,
         appBar: app_bar(),
