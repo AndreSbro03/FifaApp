@@ -1,11 +1,11 @@
-name: flutter_application_2
+name: FifaApp
 description: Creatore di tornei di per i fioi di prega.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.16
+version: 1.1.0
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
