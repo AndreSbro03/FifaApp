@@ -3,6 +3,8 @@
 An application to manage tournaments, designed especially for fifa tournaments, but also working for other tournaments.
 For example table tennis, soccer, nba, etc. It is nothing professional, but it makes it much easier to organize tournaments where the teams consist of a single or two people.
 
+The App is available only in Italian.
+
 ## Screenshots
 
 ![Alt text](/screenshot/homepage.jpg?raw=true "HomePage")
