@@ -5,10 +5,10 @@ For example table tennis, soccer, nba, etc. It is nothing professional, but it m
 
 ## Screenshots
 
-![Alt text](/screenshot/homepage.jpg?raw=true "HomePage") =720x1280
-![Alt text](/screenshot/settings.jpg?raw=true "Settings") =720x1280
-![Alt text](/screenshot/tournament.jpg?raw=true "Tournament") =720x1280
-![Alt text](/screenshot/winner.jpg?raw=true "Winner") =720x1280
+![Alt text](/screenshot/homepage.jpg?raw=true "HomePage")
+![Alt text](/screenshot/settings.jpg?raw=true "Settings")
+![Alt text](/screenshot/tournament.jpg?raw=true "Tournament")
+![Alt text](/screenshot/winner.jpg?raw=true "Winner")
 
 ## Getting Started
 
