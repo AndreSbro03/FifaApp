@@ -1,8 +1,7 @@
 # Fifa App
 
-Un'applicazione per gistire i tornei, pensata in particolare per i tornei di fifa, ma funzionante anche per tornei
-per esempio di ping-pong, calcetto barilla, nba... Non è nulla di professionale, ma rende organizzare i tornei
-in singolo o in doppio molto più semplice.
+An application to manage tournaments, designed especially for fifa tournaments, but also working for other tournaments.
+For example table tennis, soccer, nba, etc. It is nothing professional, but it makes it much easier to organize tournaments where the teams consist of a single or two people.
 
 ## Getting Started
 
