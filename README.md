@@ -10,10 +10,16 @@ The App is available only in Italian.
 <details>
   <summary>Homepage Screenshot</summary>
   <img src="/screenshot/homepage.jpg" alt="Homepage"/>
+</details>
+<details>
   <summary>Settings Screenshot</summary>
   <img src="/screenshot/settings.jpg" alt="Homepage"/>
+</details>
+<details>
   <summary>Tournament Screenshot</summary>
   <img src="/screenshot/tournament.jpg" alt="Homepage"/>
+</details>
+<details>
   <summary>Winner Page Screenshot</summary>
   <img src="/screenshot/winner.jpg" alt="Homepage"/>
 </details>
