@@ -10,6 +10,12 @@ The App is available only in Italian.
 <details>
   <summary>Homepage Screenshot</summary>
   <img src="/screenshot/homepage.jpg" alt="Homepage"/>
+  <summary>Settings Screenshot</summary>
+  <img src="/screenshot/settings.jpg" alt="Homepage"/>
+  <summary>Tournament Screenshot</summary>
+  <img src="/screenshot/tournament.jpg" alt="Homepage"/>
+  <summary>Winner Page Screenshot</summary>
+  <img src="/screenshot/winner.jpg" alt="Homepage"/>
 </details>
 
 ![Alt text](/screenshot/homepage.jpg?raw=true "HomePage")
