@@ -13,21 +13,16 @@ The App is available only in Italian.
 </details>
 <details>
   <summary>Settings Screenshot</summary>
-  <img src="/screenshot/settings.jpg" alt="Homepage"/>
+  <img src="/screenshot/settings.jpg" alt="Settings"/>
 </details>
 <details>
   <summary>Tournament Screenshot</summary>
-  <img src="/screenshot/tournament.jpg" alt="Homepage"/>
+  <img src="/screenshot/tournament.jpg" alt="Tournament"/>
 </details>
 <details>
   <summary>Winner Page Screenshot</summary>
-  <img src="/screenshot/winner.jpg" alt="Homepage"/>
+  <img src="/screenshot/winner.jpg" alt="Winner"/>
 </details>
-
-![Alt text](/screenshot/homepage.jpg?raw=true "HomePage")
-![Alt text](/screenshot/settings.jpg?raw=true "Settings")
-![Alt text](/screenshot/tournament.jpg?raw=true "Tournament")
-![Alt text](/screenshot/winner.jpg?raw=true "Winner")
 
 ## Getting Started
 
