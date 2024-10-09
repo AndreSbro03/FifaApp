@@ -10,8 +10,11 @@ Easily organize and manage your own tournaments for any sport or game! While thi
 
 Whether it's a quick match with friends or a full-on weekend competition, the Tournament Manager App makes it easy to organize and track your games!
 
+The App is available only in Italian.
+
 ## Screenshots
 
+<<<<<<< HEAD
 <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
   <div style="margin: 10px; text-align: center;">
     <img src="/screenshot/homepage.jpg" alt="HomePage" width="300px"/>
@@ -71,3 +74,21 @@ You will find the apk in the build\app\outputs\flutter-apk folder.
 - It can run also in iOS, macOS, windows, linux and web but you might have to change some settings in the relative folders.
 - Plase feel free to use my code just give me credit. 
 
+=======
+<details>
+  <summary>Homepage Screenshot</summary>
+  <img src="/screenshot/homepage.jpg" alt="Homepage"/>
+</details>
+<details>
+  <summary>Settings Screenshot</summary>
+  <img src="/screenshot/settings.jpg" alt="Settings"/>
+</details>
+<details>
+  <summary>Tournament Screenshot</summary>
+  <img src="/screenshot/tournament.jpg" alt="Tournament"/>
+</details>
+<details>
+  <summary>Winner Page Screenshot</summary>
+  <img src="/screenshot/winner.jpg" alt="Winner"/>
+</details>
+>>>>>>> e16eb80caef76e29aa6608218556c1f22c12d257
