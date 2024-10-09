@@ -1,94 +1,24 @@
-# Tournament Manager App 🎮🏆
+# Fifa App
 
-Easily organize and manage your own tournaments for any sport or game! While this app shines with **FIFA tournaments**, it’s versatile enough to handle all kinds of head-to-head competitions—whether it’s table tennis, basketball, or even your favorite video games. Perfect for casual setups where teams consist of 1-2 players, this app takes the hassle out of organizing and tracking your matches.
-
-### Features
-- ⚽ **FIFA Tournaments**: Choose your favorite FIFA teams and set up a tournament in just a few taps. Track progress and declare your champion effortlessly.
-- 🏀 **Multi-Sport Support**: From soccer and basketball to table tennis, this app works for any sport or game that involves 1-2 player teams.
-- 🎉 **Easy to Use**: No professional tools required! Set up your tournament brackets, track scores, and follow the action with a simple, intuitive interface.
-- 🏅 **Automatic Winner Tracking**: Automatically advance players in the bracket and see who comes out on top with a clear winner’s screen at the end of every tournament.
-
-Whether it's a quick match with friends or a full-on weekend competition, the Tournament Manager App makes it easy to organize and track your games!
-
-The App is available only in Italian.
+An application to manage tournaments, designed especially for fifa tournaments, but also working for other tournaments.
+For example table tennis, soccer, nba, etc. It is nothing professional, but it makes it much easier to organize tournaments where the teams consist of a single or two people.
 
 ## Screenshots
 
-<<<<<<< HEAD
-<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
-  <div style="margin: 10px; text-align: center;">
-    <img src="/screenshot/homepage.jpg" alt="HomePage" width="300px"/>
-    <p>Home Page</p>
-  </div>
-  <div style="margin: 10px; text-align: center;">
-    <img src="/screenshot/settings.jpg" alt="Settings" width="300px"/>
-    <p>Settings</p>
-  </div>
-  <div style="margin: 10px; text-align: center;">
-    <img src="/screenshot/tournament.jpg" alt="Tournament" width="300px"/>
-    <p>Tournament</p>
-  </div>
-  <div style="margin: 10px; text-align: center;">
-    <img src="/screenshot/winner.jpg" alt="Winner" width="300px"/>
-    <p>Winner</p>
-  </div>
-</div>
+![Alt text](/screenshot/homepage.jpg?raw=true "HomePage")
+![Alt text](/screenshot/settings.jpg?raw=true "Settings")
+![Alt text](/screenshot/tournament.jpg?raw=true "Tournament")
+![Alt text](/screenshot/winner.jpg?raw=true "Winner")
 
-## Getting Started: Installation
+## Getting Started
 
-Follow these steps to get the Tournament Manager App up and running on your local machine.
+This project is a starting point for a Flutter application.
 
-### Prerequisites
+A few resources to get you started if this is your first Flutter project:
 
-Before you begin, ensure you have the following installed:
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-- [Flutter](https://flutter.dev/docs/get-started/install) - Follow the official guide to set up Flutter on your machine.
-- [Dart](https://dart.dev/get-dart) - Dart comes bundled with Flutter, but ensure you have the latest version.
-- An IDE (like [Visual Studio Code](https://code.visualstudio.com/) or [Android Studio](https://developer.android.com/studio)) with Flutter and Dart plugins installed.
-
-### Clone the Repository
-
-1. Open your terminal or command prompt.
-2. Clone the repository using the following command:
-
-   ```bash
-   git clone https://github.com/yourusername/tournament-manager-app.git
-
-3. Navigate into the project directory:
-
-    ```bash
-    cd FifaApp
-
-#### Build the APK for Android
-
-1. Ensure you are in the project directory.
-2. Run the following command:
-
-   ```bash
-   flutter build apk
-
-You will find the apk in the build\app\outputs\flutter-apk folder.
-
-### Notes:
-- This section includes specific instructions for building the app for Android. 
-- It can run also in iOS, macOS, windows, linux and web but you might have to change some settings in the relative folders.
-- Plase feel free to use my code just give me credit. 
-
-=======
-<details>
-  <summary>Homepage Screenshot</summary>
-  <img src="/screenshot/homepage.jpg" alt="Homepage"/>
-</details>
-<details>
-  <summary>Settings Screenshot</summary>
-  <img src="/screenshot/settings.jpg" alt="Settings"/>
-</details>
-<details>
-  <summary>Tournament Screenshot</summary>
-  <img src="/screenshot/tournament.jpg" alt="Tournament"/>
-</details>
-<details>
-  <summary>Winner Page Screenshot</summary>
-  <img src="/screenshot/winner.jpg" alt="Winner"/>
-</details>
->>>>>>> e16eb80caef76e29aa6608218556c1f22c12d257
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
