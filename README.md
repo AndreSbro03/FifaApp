@@ -1,6 +1,6 @@
 # Tournament Manager App 🎮🏆
 
-Easily organize and manage your own tournaments for any sport or game! While this app shines with **FIFA tournaments**, it’s versatile enough to handle all kinds of head-to-head competitions—whether it’s table tennis, basketball, or even your favorite video games. Perfect for casual setups where teams consist of 1-2 players, this app takes the hassle out of organizing and tracking your matches.
+Easily organize and manage your own tournaments for any sport or game! While this app shines with **FIFA tournaments**, it’s versatile enough to handle all kinds of head-to-head competitions. Whether it’s table tennis, basketball, or even your favorite video games. Perfect for casual setups where teams consist of 1-2 players, this app takes the hassle out of organizing and tracking your matches.
 
 ### Features
 - ⚽ **FIFA Tournaments**: Choose your favorite FIFA teams and set up a tournament in just a few taps. Track progress and declare your champion effortlessly.
