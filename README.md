@@ -41,7 +41,6 @@ Before you begin, ensure you have the following installed:
 
 - [Flutter](https://flutter.dev/docs/get-started/install) - Follow the official guide to set up Flutter on your machine.
 - [Dart](https://dart.dev/get-dart) - Dart comes bundled with Flutter, but ensure you have the latest version.
-- An IDE (like [Visual Studio Code](https://code.visualstudio.com/) or [Android Studio](https://developer.android.com/studio)) with Flutter and Dart plugins installed.
 
 ### Clone the Repository
 
