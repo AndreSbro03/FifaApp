@@ -48,7 +48,7 @@ Before you begin, ensure you have the following installed:
 2. Clone the repository using the following command:
 
    ```bash
-   git clone https://github.com/yourusername/tournament-manager-app.git
+   git clone https://github.com/AndreSbro03/FifaApp.git
 
 3. Navigate into the project directory:
 
